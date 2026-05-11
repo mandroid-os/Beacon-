@@ -1,14 +1,115 @@
 <!DOCTYPE html>
-<html>
-<head><title>Beacon</title></head>
-<body>
-<h1>.</h1>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Beacon">
+    <title>Beacon</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background: #0a0a0a;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            font-family: monospace;
+        }
 
-<!-- Adsterra Smartlink Beacon -->
-<img src="https://www.profitablecpmratenetwork.com/hww2iucqp?key=9a5661e98c126e5b81672fa13f0ffe99" 
-     width="1" height="1" 
-     style="display:none !important; visibility:hidden !important;" 
-     alt="" />
+        .torch {
+            position: relative;
+            width: 80px;
+            height: 220px;
+            margin-bottom: 30px;
+        }
+
+        .flame {
+            position: absolute;
+            top: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 90px;
+            background: linear-gradient(#ffeb3b, #ff9800, #f44336, #d32f2f);
+            border-radius: 50% 50% 40% 40%;
+            animation: flame-flicker 0.15s infinite alternate;
+            box-shadow: 0 0 30px #ffeb3b;
+        }
+
+        .flame::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: 10px;
+            width: 40px;
+            height: 60px;
+            background: #ffffff;
+            border-radius: 50%;
+            opacity: 0.35;
+            animation: flame-flicker 0.25s infinite alternate;
+        }
+
+        @keyframes flame-flicker {
+            0%   { transform: translateX(-50%) scale(1.0) rotate(-8deg); }
+            100% { transform: translateX(-50%) scale(1.12) rotate(8deg); }
+        }
+
+        .handle {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 18px;
+            height: 130px;
+            background: linear-gradient(#8d5524, #5d4037);
+            border-radius: 10px;
+        }
+
+        .base {
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 25px;
+            background: #3e2723;
+            border-radius: 5px;
+        }
+
+        .subtitle {
+            color: #c026d3; /* Purple */
+            font-size: 18px;
+            text-align: center;
+            text-shadow: 
+                2px 2px 0 #000,
+                -2px -2px 0 #000,
+                2px -2px 0 #000,
+                -2px 2px 0 #000;
+            letter-spacing: 2px;
+            margin-top: 20px;
+            font-weight: bold;
+            image-rendering: pixelated;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="torch">
+        <div class="flame"></div>
+        <div class="handle"></div>
+        <div class="base"></div>
+    </div>
+
+    <div class="subtitle">
+        THIS BEACON CAN NEVER BE EXTINGUISHED
+    </div>
+
+    <!-- Adsterra Smartlink Beacon -->
+    <img src="https://www.profitablecpmratenetwork.com/hww2iucqp?key=9a5661e98c126e5b81672fa13f0ffe99" 
+         width="1" height="1" 
+         style="display:none !important; visibility:hidden !important;" 
+         alt="" />
 
 </body>
 </html>
